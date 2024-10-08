@@ -1,0 +1,1 @@
+document.selection.Text = "I pressed Alt + Ctrl + Shift + F7!"

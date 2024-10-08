@@ -1,0 +1,34 @@
+#language "v8"
+
+/**
+ * @param {string} str
+ * @returns {number} Number of words in str
+ */
+function countWords(str) {
+    let wordCount = 0;
+    let inWord = false;
+
+    for (let i = 0; i < str.length; i++) {
+        if (/\s/.test(str[i])) {
+            inWord = false;
+        } else if (!inWord) {
+            inWord = true;
+            wordCount++;
+        }
+    }
+
+    return wordCount;
+}
+
+Redraw = false;
+
+let count = 0;
+
+for (let line = 1; line <= document.GetLines(); line++) {
+	const lineStr = document.GetLine(line);
+	count += countWords(lineStr);
+}
+
+status = `${count} words`
+
+Redraw = true;
