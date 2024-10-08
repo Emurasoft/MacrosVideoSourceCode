@@ -1,2 +1,3 @@
-# MacrosVideoSourceCode
-Macro scripts demoed in the Macros video
+# MacrosVideoSourceCode 
+
+Macro scripts from the Macros video.
