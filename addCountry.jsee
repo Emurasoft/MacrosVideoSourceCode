@@ -1,4 +1,4 @@
-#language "v8"
+#language = "v8"
 
 /**
  * Gets the country name for given phone number.
@@ -37,14 +37,18 @@ function getCountryFromPhoneNumber(phoneNumber) {
     return '';
 }
 
+// Temporarily pause redraw of UI
 Redraw = false;
 
 for (let lineNumber = 1; lineNumber <= document.GetLines(); lineNumber++) {
 	const line = document.GetLine(lineNumber);
 	const country = getCountryFromPhoneNumber(line);
 	if (country.length > 0) {
+		// Go to end of phone number
 		document.selection.SetActivePoint(eePosLogical, 1, lineNumber);
 		document.selection.EndOfLine();
+		
+		// Add new line with country
 		document.writeln('');
 		document.selection.Text = country;
 	}

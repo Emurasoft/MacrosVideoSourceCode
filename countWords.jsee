@@ -1,4 +1,4 @@
-#language "v8"
+#language = "v8"
 
 /**
  * @param {string} str
